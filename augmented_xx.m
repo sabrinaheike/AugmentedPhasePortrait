@@ -343,7 +343,7 @@ function[ ] = augmented_xx(fin,gin, minx, maxx, miny, maxy, varargin)
     if size(K,1)-countk>0
         for j=1:size(K,1)
             plotrk = 1; % boolean to check if nullcline is nontrivial and within diagram
-            k = K(i);
+            k = K(j);
             kf = matlabFunction(k); 
             if isnumeric(eval(k))==1 && eval(k)==0 
                 plotrk = 0; %trivial nullcline
