@@ -249,6 +249,21 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
         for i=1:size(H,1)
             plotrh = 1; % boolean to check if nullcline is nontrivial and within diagram
             h = H(i);
+            
+            
+            hd = diff(h,y);
+            [Nhd, Dhd] = numden(hd);
+            va = solve(Dhd==0,y,  'Real', true);
+            vay = va(va>miny);
+            vay = vay(vay<maxy);
+            if length(vay)>0
+                disp('take care there is a vertical asymptote of this nullcline but I do not distinguish colors');
+                disp(h);
+                disp('you might be better off trying to express h as a function of x');
+            end 
+            
+            
+            
             hf = matlabFunction(h); 
             if isnumeric(eval(h))==1 && eval(h)==0 
                 plotrh = 0;  % trivial nullclines 
@@ -279,10 +294,10 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
                 if isnumeric(eval(h))==1                   
                     % constant nullcline
                     hold on
-                    plot([eval(h) eval(h)],[miny,maxy], 'LineStyle', '--', 'Color', CMH(i+counth,:), 'LineWidth', 2,'DisplayName','X-Nullcline');
+                    plot([eval(h) eval(h)],[miny,maxy], 'LineStyle', '--', 'Color', CMH(i*2+trivh,:), 'LineWidth', 2,'DisplayName','X-Nullcline');
                 else
                     hold on
-                    fimplicit(hf-x,'LineStyle', '--', 'Color', CMH(i+counth,:), 'LineWidth', 2,'MeshDensity', 500,'DisplayName','X-Nullcline');
+                    fimplicit(hf-x,'LineStyle', '--', 'Color', CMH(i*2+trivh,:), 'LineWidth', 2,'MeshDensity', 500,'DisplayName','X-Nullcline');
                 end
 
                 %b) Construct the associated next-iterate operator 
@@ -307,7 +322,7 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
                 end
                 % plot the root-curve
                 hold on
-                fimplicit(Lh,'Color',CMH(i+counth,:),'LineWidth',1.5,'MeshDensity', 500,'HandleVisibility','off');
+                fimplicit(Lh,'Color',CMH(i*2+trivh,:),'LineWidth',1.5,'MeshDensity', 500,'HandleVisibility','off');
 
 
                 %d) Plot the sign of this next-iterate operator 
@@ -321,14 +336,14 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
                         yt = yaxish(n);
                         % Plot the sign of the next-iterate operator
                         Lhv = feval(Lhf,xt, yt);
-                        if Lhv >0 &&xt>minx &&yt>miny
+                        if isreal(Lhv)==1&& Lhv >0 &&xt>minx &&yt>miny
                             hold on
-                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMH(i+counth,:),'MarkerEdgeColor',CMH(i+counth,:),'MarkerSize',8,...
+                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMH(2*i+trivh,:),'MarkerEdgeColor',CMH(2*i+trivh,:),'MarkerSize',8,...
                                 'Marker','+',...
                                 'LineStyle','-','LineWidth',2, 'HandleVisibility','off');
-                        elseif Lhv<0 &&xt>minx &&yt>miny
+                        elseif isreal(Lhv)==1 && Lhv<0 &&xt>minx &&yt>miny
                             hold on
-                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMH(i+counth,:),'MarkerEdgeColor',CMH(i+counth,:),'MarkerSize',10,...
+                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMH(2*i+trivh,:),'MarkerEdgeColor',CMH(2*i+trivh,:),'MarkerSize',10,...
                                 'Marker','_',...
                                 'LineStyle','-','LineWidth',2, 'HandleVisibility','off');
                         end      
@@ -345,6 +360,20 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
         for j=1:size(K,1)
             plotrk = 1; % boolean to check if nullcline is nontrivial and within diagram
             k = K(j);
+            
+            kd = diff(k,x);
+            [Nkd, Dkd] = numden(kd);
+            wa = solve(Dkd==0,x,  'Real', true);
+            wax = wa(wa>minx);
+            wax = wax(wax<maxx);
+            if length(wax)>0
+                disp('take care there is a vertical asymptote of this nullcline but I do not distinguish colors');
+                disp(k);
+                disp('you might be better off trying to express k as a function of y');
+            end 
+            
+            
+            
             kf = matlabFunction(k); 
             if isnumeric(eval(k))==1 && eval(k)==0 
                 plotrk = 0; %trivial nullcine
@@ -373,10 +402,10 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
                 if isnumeric(eval(k))==1
                     % constant nullcline
                     hold on
-                    plot([minx, maxx],[eval(k) eval(k)], 'LineStyle', '--', 'Color', CMK(j+counth,:), 'LineWidth', 2,'DisplayName','Y-Nullcline');
+                    plot([minx, maxx],[eval(k) eval(k)], 'LineStyle', '--', 'Color', CMK(2*j+countk,:), 'LineWidth', 2,'DisplayName','Y-Nullcline');
                 else
                     hold on
-                    fplot(kf, [minx,maxx],'LineStyle', '--', 'Color', CMK(j+counth,:), 'LineWidth', 2,'DisplayName','Y-Nullcline');
+                    fplot(kf, [minx,maxx],'LineStyle', '--', 'Color', CMK(2*j+countk,:), 'LineWidth', 2,'DisplayName','Y-Nullcline');
                 end
                 
                 %b) Construct the associated next-iterate operator 
@@ -400,7 +429,7 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
                 end
                 % plot the root-curve
                 hold on
-                fimplicit(Lk,'Color',CMK(j+countk,:),'LineWidth',1.5, 'MeshDensity', 500,'HandleVisibility','off');
+                fimplicit(Lk,'Color',CMK(2*j+countk,:),'LineWidth',1.5, 'MeshDensity', 500,'HandleVisibility','off');
                
                 %d) Plot the sign of this next-iterate operator 
                 xaxish = xaxis(j+1+size(H,1)-trivh:nr+1:end);
@@ -412,14 +441,14 @@ function[ ] = augmented_yx(fin,gin, minx, maxx, miny, maxy, varargin)
                         yt = yaxish(n);
                         % Plot the sign of the next-iterate operator
                         Lkv = feval(Lkf,xt, yt);
-                        if Lkv >0 &&xt>minx &&yt>miny
+                        if isreal(Lkv)==1&& Lkv >0 &&xt>minx &&yt>miny
                             hold on
-                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMK(j+countk,:),'MarkerEdgeColor',CMK(j+countk,:),'MarkerSize',8,...
+                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMK(2*j+countk,:),'MarkerEdgeColor',CMK(2*j+countk,:),'MarkerSize',8,...
                                 'Marker','+',...
                                 'LineStyle','-','LineWidth',2, 'HandleVisibility','off');
-                        elseif Lkv<0 &&xt>minx &&yt>miny
+                        elseif isreal(Lkv)==1&& Lkv<0 &&xt>minx &&yt>miny
                             hold on
-                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMK(j+countk,:),'MarkerEdgeColor',CMK(j+countk,:),'MarkerSize',10,...
+                            plot([xt,xt],[yt,yt],'MarkerFaceColor',CMK(2*j+countk,:),'MarkerEdgeColor',CMK(2*j+countk,:),'MarkerSize',10,...
                                 'Marker','_',...
                                 'LineStyle','-','LineWidth',2, 'HandleVisibility','off');
                         end      
