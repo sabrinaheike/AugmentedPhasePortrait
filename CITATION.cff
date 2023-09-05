@@ -1,8 +1,10 @@
 cff-version: 1.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Streipert, Wolkowicz
-    given-names: Sabrina H., Gail S. K.
+  - family-names: Streipert
+    given-names: Sabrina H.
+  - family-names: Wolkowicz
+    given-names: Gail S. K.
 title: "Augmented Phase Portrait"
 version: 1
 date-released: 2022-10-11
@@ -11,8 +13,12 @@ date-released: 2022-10-11
 cff-version: 2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Ralph, Streipert, Wolkowicz,
-    given-names: Victoria A., Sabrina H., Gail S. K.
+  - family-names: Ralph
+    given-names: Victoria A.
+  - family-names: Streipert
+    given-names: Sabrina H. 
+  - family-names: Wolkowicz
+    given-names: Gail S. K. 
 title: "Augmented Phase Portrait"
 version: 2
 date-released: 2023-09-04
