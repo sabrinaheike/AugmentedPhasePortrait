@@ -42,24 +42,24 @@ Note: Clear any x and y values you may have in your matlab memory by "clear x y"
 %%%%%%%%%%%%%%%%%%%%EXAMPLE 1: 
 
 To get the augmented phase portrait for the system: 
-x_(t+1)=2*x_t/(1+x_t+0.3*y_t),
-y_(t+1)=3*y_t/(1+2*y_t+0.6*x_t)
+x_(t+1)=2 * x_t/(1+x_t+0.3 * y_t),
+y_(t+1)=3 * y_t/(1+2 * y_t+0.6 * x_t)
 
 plotted in [0,2]x[0,3] with default values, type:
 
->> clear all
+> clear all
 
->> syms x y
+> syms x y
 
->> augmented_xx(2*x/(1+x+0.3*y), 3*y/(1+2*y+0.6*x),0, 2,0, 3)
+> augmented_xx(2*x/(1+x+0.3*y), 3*y/(1+2*y+0.6*x),0, 2,0, 3)
 
 % [alternatively:]
 
->> f=2*x/(1+x+0.3*y);
+> f=2*x/(1+x+0.3*y);
 
->> g=3*y/(1+2*y+0.6*x);
+> g=3*y/(1+2*y+0.6*x);
 
->> augmented_xx(f,g,0,2,0,3)
+> augmented_xx(f,g,0,2,0,3)
 
 [For this example, the nullclines can be expressed as functions in x or y, so any of the other codes will also work: augmented_xy, augmented_yx, augmented_yy]
 
