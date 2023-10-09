@@ -37,8 +37,8 @@ Note: Clear any x and y values you may have in your matlab memory by "clear x y"
 %%%%%%%%%%%%%%%%%%%%EXAMPLE 1: 
 
 To get the augmented phase portrait for the system: 
-x_(t+1)=2*x_t/(1+x_t+0.3*y_t),
-y_(t+1)=3*y_t/(1+2*y_t+0.6*x_t)
+x_(t+1)=2x_t/(1+x_t+0.3y_t),
+y_(t+1)=3y_t/(1+2y_t+0.6x_t)
 
 plotted in [0,2]x[0,3] with default values, type:
 
@@ -46,13 +46,13 @@ plotted in [0,2]x[0,3] with default values, type:
 
 > syms x y
 
-> augmented_xx(2*x/(1+x+0.3*y), 3*y/(1+2*y+0.6*x),0, 2,0, 3)
+> augmented_xx(2 * x / (1 + x + 0.3 * y), 3 * y / (1 + 2 * y + 0.6 * x), 0, 2, 0, 3)
 
 % [alternatively:]
 
-> f=2*x/(1+x+0.3*y);
+> f = 2 * x / (1 + x + 0.3 * y);
 
-> g=3*y/(1+2*y+0.6*x);
+> g = 3 * y / (1 + 2 * y + 0.6 * x);
 
 > augmented_xx(f,g,0,2,0,3)
 
@@ -61,15 +61,15 @@ plotted in [0,2]x[0,3] with default values, type:
 %%%%%%%%%%%%%%%%%%%%EXAMPLE 2: Fig. 11 in  S.H. Streipert, G.S.K. Wolkowicz: An augmented phase plane approach for discrete planar maps: Introducing next-iterate ...
 
 % To get the augmented phase portrait for the system: 
- x_(t+1)=(1-0.4)*x_t-0.5*x_t*y_t+0.5,
- y_(t+1)=0.4*x_t*y_t
+ x_(t+1)=(1-0.4)x_t-0.5x_ty_t+0.5,
+ y_(t+1)=0.4x_ty_t
 % plotted in [0,5]x[0,3] with fewer signs of the next-iterate operator and a line to check if solutions remain non-negative, type:
 
 > clear all
 
 > syms x y
 
-> augmented_xy((1-0.4)*x-0.5*x*y+0.5, 0.5*x*y,0, 5,0, 3,15, 0,0)
+> augmented_xy((1-0.4) * x - 0.5 * x * y + 0.5, 0.5 * x * y, 0, 5, 0, 3, 15, 0, 0)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% For more examples, see Section 4 in S.H. Streipert, G.S.K. Wolkowicz: An augmented phase plane approach for discrete planar maps: Introducing next-iterate operators, submitted.
