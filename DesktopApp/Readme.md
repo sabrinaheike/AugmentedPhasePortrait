@@ -1,5 +1,5 @@
-Victoria Ralph
-ralphv1@mcmaster.ca
+Create by: Victoria Ralph,
+ralphv1@mcmaster.ca,
 McMaster University
 
 Desktop app for creating the augmented phase portrait for discrete planar maps.
