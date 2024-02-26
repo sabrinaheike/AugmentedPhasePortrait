@@ -1,5 +1,7 @@
 MATLAB program to create augmented phase portraits. 
 
+Only one program needed to replace the 4 files (augmented_xx, augmented_xy, augmented_yx, augmented_yy) of Version 2.0
+
 The Version 3.0 GUI has the same functionality as this program, while being more user friendly. 
 
 Instructions for using MATLAB file: 
