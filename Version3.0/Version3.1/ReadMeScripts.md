@@ -9,11 +9,11 @@ Instructions for using augmented_implicit.m:
 1. Download file and open in MATLAB
 2. Call function using augmented_implicit(inputs)
 
-Required Inputs: (f,g,minx, maxx, miny, maxy)
+Required Inputs: (f,g,minx, maxx, miny, maxy)  
 
         f = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y)
         g = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) 
-      (Make sure f and g equations are properly vectorized using a period (.) before *, /, and ^ operators)
+              (Make sure f and g equations are properly vectorized using a period (.) before *, /, and ^ operators)
         minx = number; minimum x-value to be considered for plotting
         maxx = number; maximum x-value to be considered for plotting
         miny = number; minimum y-value to be considered for plotting
