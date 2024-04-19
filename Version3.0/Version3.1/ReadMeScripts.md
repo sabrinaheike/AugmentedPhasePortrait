@@ -11,13 +11,13 @@ Instructions for using augmented_implicit.m:
 
 Required Inputs: (f,g,minx, maxx, miny, maxy)
 
-    f = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y)
-    g = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) 
+        f = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y)
+        g = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) 
       (Make sure f and g equations are properly vectorized using a period (.) before *, /, and ^ operators)
-    minx = number; minimum x-value to be considered for plotting
-    maxx = number; maximum x-value to be considered for plotting
-    miny = number; minimum y-value to be considered for plotting
-    maxy = number; maximum y-value to be considered for plotting
+        minx = number; minimum x-value to be considered for plotting
+        maxx = number; maximum x-value to be considered for plotting
+        miny = number; minimum y-value to be considered for plotting
+        maxy = number; maximum y-value to be considered for plotting
 
 Optional Inputs: add as Name-Value pairs
     Accuracy = number; optional parameter for number of arrows and signs of 
