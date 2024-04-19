@@ -53,7 +53,7 @@ Instructions for using add_orbit.m:
   1. Download file and open in Matlab
   2. Add orbits to your phase portait using the command add_orbit(args)
 
-Required Inputs: (f,g,Xo,Yo,iterations)
+Required Inputs: (f,g,Xo,Yo,iterations)  
   f = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y (the same as for the phase portrait)  
   g = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) (the same as for the phase portrait)  
   Xo = x-coordinate of initial conditions for orbit  
