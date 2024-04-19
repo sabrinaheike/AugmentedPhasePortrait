@@ -54,11 +54,11 @@ Instructions for using add_orbit.m:
   2. Add orbits to your phase portait using the command add_orbit(args)
 
 Required Inputs: (f,g,Xo,Yo,iterations)
-  f = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y (the same as for the phase portrait)
-  g = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) (the same as for the phase portrait)
-  Xo = x-coordinate of initial conditions for orbit
-  Yo = y-coordinate of initial conditions for orbit
-  iterations = The number of iterations for your orbit (the initial point is point 0)
+  f = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y (the same as for the phase portrait)  
+  g = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) (the same as for the phase portrait)  
+  Xo = x-coordinate of initial conditions for orbit  
+  Yo = y-coordinate of initial conditions for orbit  
+  iterations = The number of iterations for your orbit (the initial point is point 0)  
 
 Optional Input: add as Name-Value pair
   OrbitAxes = axes object; specify the axes on which to plot the orbit
