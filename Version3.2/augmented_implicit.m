@@ -26,6 +26,8 @@
 % CombineNullcline = "on" or "off". Optional input to control the automatic
 %   combining of nullcline segments which can together form 1 continuous
 %   nullcline function. The default setting is "on"
+% OptimizeNullclineCombination = "on" or "off". Optional input to minimize the final
+%   number of nullcline segments when combining. The default setting is "off"
 
 function [] = augmented_implicit(fin,gin, minx, maxx, miny, maxy, options)
     
