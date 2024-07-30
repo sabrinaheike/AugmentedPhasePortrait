@@ -6,7 +6,7 @@ See Mac/Windows/Linux folders for dowloading instructions.
 
 Version 3.2 Updates:
 - Improvements to the nullcline combining algorithm to improve performance.
-- Added an optional "Optimize Nullcline Combination Option".
+- New optional "Optimize Nullcline Combination Option".
   - This minimizes the total number of nullcline segments in the resulting phase portrait.
   - This is beneficial when there are multiple possible ways to combine nullcline segments.
   - It is not necessary to use the "Optimize Nullcline Combination Option" option in most cases.
