@@ -1,6 +1,6 @@
 Standalone GUI: No need for MATLAB installed.
 
-GUI uses the augmented_implicit.m and add_orbit.m version3.1 MATLAB functions for creating augmented phase portraits.
+GUI uses the augmented_implicit.m and add_orbit.m version3.2 MATLAB functions for creating augmented phase portraits.
 
 See Mac/Windows/Linux folders for dowloading instructions.
 
