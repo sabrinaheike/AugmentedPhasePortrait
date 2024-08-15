@@ -82,7 +82,7 @@ Make sure equations are properly vectorized using a period (.) before *, /, and 
 
 Type:
 
-> augmented_implicit(2 * x ./ (1 + x + 0.3 * y), 3 * y ./ (1 + 2 * y + 0.6 * x), 0, 2, 0, 3, 'Accuracy',30,'CutoffValues',[0 0], 'NullclineRange', [0 4 0 5])
+> augmented_implicit(@(x,y) 2 * x ./ (1 + x + 0.3 * y), @(x,y) 3 * y ./ (1 + 2 * y + 0.6 * x), 0, 2, 0, 3, 'Accuracy',30,'CutoffValues',[0 0], 'NullclineRange', [0 4 0 5])
 
 % [alternatively:]
 
