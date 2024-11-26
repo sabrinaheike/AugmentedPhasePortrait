@@ -3,13 +3,13 @@ Matlab Code to create augmented phase portrait, introduced in S.H. Streipert, G.
 
 Focus of the dynamics within the positive cone of planar maps. 
 
-Version 3.0: improved codes and standalone GUI; created February 2024 (improved by: Victoria Ralph, supervised by Gail S. K. Wolkowicz and Sabrina H. Streipert)
+Version 3.0: improved codes and standalone GUI; created February 2024 (Victoria Ralph, supervised by Gail S. K. Wolkowicz and Sabrina H. Streipert)
 
    One program does it all (i.e. replaces augmented_xx, augmented_xy, augmented_yx, augmented_yy) 
 
    Standalone GUI: No need for MATLAB installed.
 
-   If you have MATLAB installed you can use augmented_impicit.m
+   If you have MATLAB installed you can use augmented_impicit.m to create phase portraits and add_orbit.m to add orbits to your portrait.
 
 
 Version 2.0: improved codes; created August 2023 (improved by: Victoria Ralph, supervised by Gail S. K. Wolkowicz and Sabrina H. Streipert) 
