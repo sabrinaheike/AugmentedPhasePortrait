@@ -8,7 +8,7 @@ Improvements from version3.1 code:
   - It is not necessary to use the "OptimizeNullclineCombination" option in most cases.
 
 Instructions for using augmented_implicit.m: 
-1. Download file and open in MATLAB
+1. Download augmented_implicit.m file and open in MATLAB
 2. Call function using augmented_implicit(inputs)
 
 Required Inputs: (f,g,minx, maxx, miny, maxy)  
@@ -92,11 +92,30 @@ Type:
 
 > augmented_implicit(f,g,0,2,0,3,'Accuracy',30,'CutoffValues',[0 0], 'NullclineRange', [0 4 0 5])
 
+
+Instructions for using augmented_implicit.m:
+
+1. Download augmented_implicit.m file and open in MATLAB
+2. Call function using add_orbit(inputs)
+
+Required Inputs: (fin2,gin2,Xo,Yo,iterations)
+
+  fin2 = @(x,y) f(x,y); right-hand side of the X-equation f = f(x,y)
+  gin2 = @(x,y) g(x,y); right-hand side of the Y-equation g = g(x,y) 
+  (Make sure f and g equations are properly vectorized using a period (.) before *, /, and ^ operators)
+  Xo = starting x-coordinate for orbit
+  Yo = starting y-coordinate for orbit
+  iterations = number of iterations to plot
+
+Optional Inputs: add as Name-Value pairs
+  OrbitAxes = axes object; specifies the axes to plot the orbit
+
 To add orbits once f and g are defined as above, type
 
 >hold on   
 
 >add_orbit(f,g,.1,2,10)  % to add 10 iterations starting from (.1,2)
+
 
 
 
